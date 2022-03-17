@@ -35,6 +35,8 @@ public class Runner {
 
     public void setGrupoSanguineo(String grupoSanguineo) { this.grupoSanguineo = grupoSanguineo; }
 
+    public boolean getAtivo() { return ativo; }
+
     public void setAtivo(boolean ativo) { this.ativo = ativo; }
 
     public Circuit getCircuito() { return circuito; }

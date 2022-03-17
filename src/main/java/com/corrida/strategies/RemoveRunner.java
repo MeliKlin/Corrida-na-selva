@@ -2,7 +2,7 @@ package com.corrida.strategies;
 
 import com.corrida.models.Runner;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class RemoveRunner implements OptionStrategy {
@@ -14,7 +14,7 @@ public class RemoveRunner implements OptionStrategy {
     }
 
     @Override
-    public void execute(List<Runner> runners) {
+    public void execute(HashMap<Integer, Runner> runners) {
         System.out.println("RemoveRunner strategy foi chamado");
     }
 

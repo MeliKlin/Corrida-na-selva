@@ -3,7 +3,7 @@ package com.corrida.strategies;
 import com.corrida.enums.Circuit;
 import com.corrida.models.Runner;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class RegisterRunner implements OptionStrategy {
@@ -15,10 +15,11 @@ public class RegisterRunner implements OptionStrategy {
     }
 
     @Override
-    public void execute(List<Runner> runners) {
+    public void execute(HashMap<Integer, Runner> runners) {
         System.out.println("RegisterRunner strategy foi chamado.");
+        int id = runners.size() + 1;
         Runner newRunner = collectData();
-        runners.add(newRunner);
+        runners.put(id, newRunner);
     }
 
     public Runner collectData() {

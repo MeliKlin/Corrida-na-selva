@@ -6,7 +6,7 @@ import com.corrida.strategies.OptionStrategy;
 import com.corrida.strategies.RegisterRunner;
 import com.corrida.strategies.RemoveRunner;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Program {
@@ -14,7 +14,7 @@ public class Program {
     public static void main(String[] args) {
         System.out.println("Corrida na selva");
         Scanner scanner = new Scanner(System.in);
-        ArrayList<Runner> runners = new ArrayList<>();
+        HashMap<Integer, Runner> runners = new HashMap<>();
 
         RegisterRunner registerRunner = new RegisterRunner(scanner);
         ListRunners listRunners = new ListRunners();
@@ -48,7 +48,7 @@ public class Program {
         }
     }
 
-    private static void executeOperation(OptionStrategy strategy, ArrayList<Runner> runners) {
+    private static void executeOperation(OptionStrategy strategy, HashMap<Integer, Runner> runners) {
         strategy.execute(runners);
     }
 

@@ -2,15 +2,18 @@ package com.corrida.strategies;
 
 import com.corrida.models.Runner;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ListRunners implements OptionStrategy {
 
     @Override
-    public void execute(List<Runner> runners) {
+    public void execute(HashMap<Integer, Runner> runners) {
         System.out.println("ListRunner strategy foi chamado.");
 
-        runners.forEach(runner -> System.out.println(runner.printRunner()));
+        for (Map.Entry<Integer, Runner> pair: runners.entrySet()) {
+            System.out.println("Corredor " + pair.getKey() + ": " + pair.getValue().printRunner() + "\n");
+        }
     }
 
 }
