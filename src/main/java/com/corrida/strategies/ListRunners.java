@@ -9,10 +9,10 @@ public class ListRunners implements OptionStrategy {
 
     @Override
     public void execute(HashMap<Integer, Runner> runners) {
-        System.out.println("ListRunner strategy foi chamado.");
-
         for (Map.Entry<Integer, Runner> pair: runners.entrySet()) {
-            System.out.println("Corredor " + pair.getKey() + ": " + pair.getValue().printRunner() + "\n");
+            if (pair.getValue().getAtivo()) {
+                System.out.println("Corredor " + pair.getKey() + ": " + pair.getValue().printRunner() + "\n");
+            }
         }
     }
 

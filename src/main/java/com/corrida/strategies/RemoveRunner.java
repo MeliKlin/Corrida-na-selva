@@ -15,7 +15,16 @@ public class RemoveRunner implements OptionStrategy {
 
     @Override
     public void execute(HashMap<Integer, Runner> runners) {
-        System.out.println("RemoveRunner strategy foi chamado");
+        System.out.println("Para cancelar a inscricao, informe o numero do corredor:");
+        int id = scanner.nextInt();
+
+        Runner runner = runners.get(id);
+        if (runner != null) {
+            runner.setAtivo(false);
+            return;
+        }
+
+        System.out.println("Corredor não encontrado.");
     }
 
 }

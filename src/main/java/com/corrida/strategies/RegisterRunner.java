@@ -16,7 +16,6 @@ public class RegisterRunner implements OptionStrategy {
 
     @Override
     public void execute(HashMap<Integer, Runner> runners) {
-        System.out.println("RegisterRunner strategy foi chamado.");
         int id = runners.size() + 1;
         Runner newRunner = collectData();
         runners.put(id, newRunner);
