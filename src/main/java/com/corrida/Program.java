@@ -1,5 +1,12 @@
 package com.corrida;
 
+import com.corrida.models.Runner;
+import com.corrida.strategies.ListRunners;
+import com.corrida.strategies.OptionStrategy;
+import com.corrida.strategies.RegisterRunner;
+import com.corrida.strategies.RemoveRunner;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Program {
@@ -7,6 +14,11 @@ public class Program {
     public static void main(String[] args) {
         System.out.println("Corrida na selva");
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Runner> runners = new ArrayList<>();
+
+        RegisterRunner registerRunner = new RegisterRunner();
+        ListRunners listRunners = new ListRunners();
+        RemoveRunner removeRunner = new RemoveRunner();
 
         while (true) {
             System.out.println("\nSelecione uma das opcoes abaixo");
@@ -18,13 +30,13 @@ public class Program {
             int option = scanner.nextInt();
             switch (option) {
                 case 1:
-                    System.out.println("Opcao de cadastrar usuario selecionado");
+                    executeOperation(registerRunner, runners);
                     break;
                 case 2:
-                    System.out.println("Opcao de listar corredores selecionado");
+                    executeOperation(listRunners, runners);
                     break;
                 case 3:
-                    System.out.println("Opcao de cancelar inscricao selecionado");
+                    executeOperation(removeRunner, runners);
                     break;
                 case 4:
                     System.out.println("Opcao de finalizar o programa selecionado");
@@ -34,6 +46,10 @@ public class Program {
                     System.out.println("Opcao invalida, tente novamente.");
             }
         }
+    }
+
+    private static void executeOperation(OptionStrategy strategy, ArrayList<Runner> runners) {
+        strategy.execute(runners);
     }
 
 }
