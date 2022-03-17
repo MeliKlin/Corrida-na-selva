@@ -26,25 +26,18 @@ public class Runner {
         this.sobrenome = sobrenome;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+    public int getIdade() { return  idade; }
+    public void setIdade(int idade) { this.idade = idade; }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
 
-    public void setTelEmergencia(String telEmergencia) {
-        this.telEmergencia = telEmergencia;
-    }
+    public void setTelEmergencia(String telEmergencia) { this.telEmergencia = telEmergencia; }
 
-    public void setGrupoSanguineo(String grupoSanguineo) {
-        this.grupoSanguineo = grupoSanguineo;
-    }
+    public void setGrupoSanguineo(String grupoSanguineo) { this.grupoSanguineo = grupoSanguineo; }
 
-    public void setAtivo(boolean ativo) {
-        this.ativo = ativo;
-    }
+    public void setAtivo(boolean ativo) { this.ativo = ativo; }
+
+    public Circuit getCircuito() { return circuito; }
 
     public void setCircuito(Circuit circuito) {
         this.circuito = circuito;
