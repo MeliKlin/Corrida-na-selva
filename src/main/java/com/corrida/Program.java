@@ -17,7 +17,7 @@ public class Program {
         ArrayList<Runner> runners = new ArrayList<>();
 
         RegisterRunner registerRunner = new RegisterRunner(scanner);
-        ListRunners listRunners = new ListRunners(scanner);
+        ListRunners listRunners = new ListRunners();
         RemoveRunner removeRunner = new RemoveRunner(scanner);
 
         while (true) {
