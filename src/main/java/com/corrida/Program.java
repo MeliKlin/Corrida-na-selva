@@ -16,9 +16,9 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Runner> runners = new ArrayList<>();
 
-        RegisterRunner registerRunner = new RegisterRunner();
-        ListRunners listRunners = new ListRunners();
-        RemoveRunner removeRunner = new RemoveRunner();
+        RegisterRunner registerRunner = new RegisterRunner(scanner);
+        ListRunners listRunners = new ListRunners(scanner);
+        RemoveRunner removeRunner = new RemoveRunner(scanner);
 
         while (true) {
             System.out.println("\nSelecione uma das opcoes abaixo");
